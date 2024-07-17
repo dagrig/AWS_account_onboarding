@@ -26,3 +26,6 @@ Thumbs.db
 
 # Visual Studio Code files
 .vscode/
+
+# Ignore lock files
+*.lock.hcl

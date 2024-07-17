@@ -7,6 +7,8 @@ if [ ! -f .env ]; then
 fi
 
 # Export all environment variables prefixed with TF_VAR_ from the .env file
-export $(grep -v '^#' .env | xargs)
+set -a
+. ./.env
+set +a
 
 echo "Environment variables loaded from .env file."
