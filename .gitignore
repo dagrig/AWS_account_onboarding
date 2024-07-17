@@ -1,0 +1,28 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.log
+
+# Crash log files
+crash.log
+
+# Ignore Terraform plan files
+*.tfplan
+
+# Ignore .terraform directory
+.terraform/
+
+# Ignore environment variables file
+.env
+
+# macOS files
+.DS_Store
+
+# Windows thumbnail cache files
+Thumbs.db
+
+# Linux directory file
+.directory
+
+# Visual Studio Code files
+.vscode/
