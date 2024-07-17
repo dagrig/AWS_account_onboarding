@@ -5,7 +5,6 @@ provider "aws" {
 module "organization" {
   source              = "./modules/organization"
   ou_name             = var.ou_name
-  identity_store_id   = var.identity_store_id
   group_name          = var.group_name
   permission_set_name = var.permission_set_name
 }
