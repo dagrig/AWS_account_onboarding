@@ -5,5 +5,5 @@ output "account_id" {
 
 output "zone_id" {
   description = "The ID of the created Route 53 hosted zone."
-  value       = module.account.zone_id
+  value       = module.route53.zone_id
 }

@@ -1,15 +1,22 @@
 // Org resources
+
+
 resource "aws_organizations_organization" "org" {
   aws_service_access_principals = ["sso.amazonaws.com"]
   feature_set = "ALL"
 }
 
+# Data source for AWS Organization
+data "aws_organizations_organization" "org_data" {}
 resource "aws_organizations_organizational_unit" "ou" {
   name      = var.ou_name
-  parent_id = aws_organizations_organization.org.root_id
+  parent_id = data.aws_organizations_organization.org_data.roots[0].id
 }
 
 // SSO resources
+
+# Data source for AWS SSO Instances
+data "aws_ssoadmin_instances" "example" {}
 resource "aws_ssoadmin_instance" "instance" {
   identity_store_id = var.identity_store_id
 }
