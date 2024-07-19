@@ -14,7 +14,7 @@ variable "account_email" {
   type        = string
 }
 
-variable "domain" {
+variable "domain_name" {
   description = "Domain name for the Route53 zone"
   type        = string
 }

@@ -5,8 +5,9 @@ output "organization_id" {
 
 # Output the Account ID
 output "account_id" {
-  value = module.account.account_id
+  value = module.account1.account_id
 }
+
 
 # output "route53_zone_id" {
 #   value = module.account.route53_zone_id

@@ -22,12 +22,27 @@ module "organization" {
   create_organization  = true  # Set this to false if you're sure an organization already exists
 }
 
-# Create the AWS account, and then call the route53 module to create the DNS records for the account
-module "account" {
+# Create the root AWS account, and then call the route53 module to create the DNS records for the account
+module "account1" {
   source       = "./modules/account"
   account_name = var.account_name
   account_email = var.account_email
-  parent_ou_id = module.organization.organizational_unit_id
-  domain       = var.domain
+  parent_id = module.organization.organizational_unit_id
+  aws_region   = var.aws_region
+  domain_name  = var.domain_name
   dns_records  = var.dns_records
 }
+
+
+# # Create account2
+# module "account2" {
+#   source            = "./modules/account"
+#   account_name              = "account2"
+#   account_email             = "account2@example.com"
+#   parent_id         = module.organization.organizational_unit_id
+#   domain_name  = var.domain_name
+#   dns_records  = var.dns_records
+#   aws_region        = var.aws_region
+# }
+
+#... more accounts as needed ...
