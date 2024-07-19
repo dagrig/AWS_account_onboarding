@@ -18,7 +18,7 @@
 
     ```sh
     git clone https://github.com/dagrig/AWS_account_onboarding.git
-    cd aws-onboarding
+    cd aws_onboarding
     ```
 
 2. **Copy the `env.example` file to `.env`**:
