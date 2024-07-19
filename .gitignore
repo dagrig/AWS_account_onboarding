@@ -29,3 +29,5 @@ Thumbs.db
 
 # Ignore lock files
 *.lock.hcl
+
+.terragrunt-cache/

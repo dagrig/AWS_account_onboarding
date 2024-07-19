@@ -1,14 +1,15 @@
 variable "domain" {
-  description = "The domain name for the Route 53 zone"
+  description = "The domain name for the Route53 zone"
   type        = string
 }
 
 variable "dns_records" {
-  description = "A list of DNS records to create in the zone"
-  type        = list(object({
+  description = "List of DNS records to be created in the zone"
+  type = list(object({
     name    = string
     type    = string
     ttl     = number
     records = list(string)
   }))
+  default = []
 }
