@@ -1,4 +1,4 @@
-# modules/organization/main.tf
+# Create an organization
 
 # Data source to fetch SSO instances
 data "aws_ssoadmin_instances" "sso" {}
