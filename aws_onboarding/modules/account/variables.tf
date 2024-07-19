@@ -6,6 +6,7 @@ variable "account_name" {
 variable "account_email" {
   description = "Email address associated with the new AWS account"
   type        = string
+  default     = "new-unique-email@example.com"
 }
 
 variable "parent_ou_id" {
@@ -16,6 +17,7 @@ variable "parent_ou_id" {
 variable "domain" {
   description = "Domain name for the Route53 zone in the new account"
   type        = string
+  default     = "mycompany.internal"
 }
 
 variable "dns_records" {

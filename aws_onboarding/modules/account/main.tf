@@ -3,6 +3,8 @@ resource "aws_organizations_account" "account" {
   name      = var.account_name
   email     = var.account_email
   parent_id = var.parent_ou_id
+  close_on_deletion = true # Close the account when it's deleted
+  iam_user_access_to_billing = "ALLOW" # Allow IAM users to access billing information
 }
 
 module "route53" {
