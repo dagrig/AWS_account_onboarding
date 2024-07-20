@@ -1,8 +1,8 @@
 # Purpose: Create an AWS Organization and Organizational Unit
 resource "aws_organizations_organization" "this" {
-  count                         = var.create_organization ? 1 : 0
-  aws_service_access_principals = ["cloudtrail.amazonaws.com"]
-  feature_set                   = "ALL"
+  count                         = var.create_organization ? 1 : 0 # Only create the organization if the create_organization variable is true
+  aws_service_access_principals = ["cloudtrail.amazonaws.com"] # Allow CloudTrail to access the organization
+  feature_set                   = "ALL" # Enable all features for the organization
 }
 
 data "aws_organizations_organization" "existing" {
