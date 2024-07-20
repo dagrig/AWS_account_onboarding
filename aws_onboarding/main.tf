@@ -22,3 +22,5 @@ module "account" {
   }
   aws_region = var.aws_region
 }
+
+#If you want to onboard a new account - declare the account module again and pass the variables.
