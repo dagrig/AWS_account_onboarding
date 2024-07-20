@@ -10,6 +10,6 @@ data "aws_organizations_organization" "existing" {
 }
 
 resource "aws_organizations_organizational_unit" "this" {
-  name      = "my-ou1"
+  name      = "my-ou"
   parent_id = var.create_organization ? aws_organizations_organization.this[0].roots[0].id : var.org_id # If create_organization is true, then use the new organization ID, otherwise use the provided organization ID
 }
