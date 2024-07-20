@@ -9,7 +9,7 @@
 ## Prerequisites
 
 - [Terraform](https://www.terraform.io/downloads.html) installed with the version 5.58 or higher.
-- AWS CLI configured (optional but recommended)
+- AWS CLI configured
 - An AWS account with the necessary permissions
 
 ## Usage
