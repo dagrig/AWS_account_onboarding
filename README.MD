@@ -73,4 +73,4 @@
 
 Ensure you have the necessary permissions to create AWS organizations, accounts, and Route 53 resources.
 This may not work in the root account, because root accounts cannot assume roles needed for this deployment.
-Consider creating a new administrator account in the IAM.
+Consider creating a new administrator account in the IAM before deploying this.
