@@ -17,7 +17,7 @@
 1. **Configure AWS credentials**:
 
     Either run `aws configure` and provision the credentials manually OR
-    Provide credentials in the `.env.` file. 
+    Provide credentials in the `.env` file. 
     Be cautious with storing sensitive information in plain text!
 
 2. **Clone the repository**:
