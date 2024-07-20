@@ -4,6 +4,8 @@ provider "aws" {
 
 module "organization" {
   source = "./modules/organization"
+  create_organization = false  # Set this to false to bypass creating a new organization
+  org_id = "ou-gmba-b7ljmf6d"  # Provide your existing organization ID
 }
 
 module "account" {

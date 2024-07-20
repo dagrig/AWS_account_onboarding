@@ -1,10 +1,10 @@
-variable "parent_id" {
-  description = "The ID of the parent organizational unit"
+variable "account_name" {
+  description = "The name of the new AWS account"
   type        = string
 }
 
-variable "account_name" {
-  description = "The name of the new AWS account"
+variable "parent_id" {
+  description = "Parent Organizational Unit ID for the new account"
   type        = string
 }
 
