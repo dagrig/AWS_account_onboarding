@@ -16,7 +16,7 @@ resource "null_resource" "wait_for_activation" {
 
 provider "aws" {
   alias   = "new_account"
-  region  = "us-east-1"
+  region  = var.aws_region
   assume_role {
     role_arn = "arn:aws:iam::${aws_organizations_account.this.id}:role/OrganizationAccountAccessRole" # Assume the role created in the new account
   }

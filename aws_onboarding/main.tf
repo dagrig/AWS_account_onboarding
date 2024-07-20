@@ -20,4 +20,5 @@ module "account" {
   providers = {
     aws = aws
   }
+  aws_region = var.aws_region
 }
