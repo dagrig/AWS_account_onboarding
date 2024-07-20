@@ -3,6 +3,7 @@ resource "aws_organizations_organization" "this" {
   count                         = var.create_organization ? 1 : 0 # Only create the organization if the create_organization variable is true
   aws_service_access_principals = ["cloudtrail.amazonaws.com"] # Allow CloudTrail to access the organization
   feature_set                   = "ALL" # Enable all features for the organization
+  # There is no name attribute for AWS Organizations, so we use the ID as the name
 }
 
 data "aws_organizations_organization" "existing" {
