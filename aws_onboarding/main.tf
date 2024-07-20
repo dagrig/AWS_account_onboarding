@@ -1,13 +1,16 @@
+# Description: This file is the entry point for the Terraform configuration. It defines the provider and modules to be used.
 provider "aws" {
-  region = "us-east-1"
+  region = var.aws_region
 }
 
+# Module to create an organization
 module "organization" {
   source = "./modules/organization"
-  create_organization = false  # Set this to false to bypass creating a new organization
-  org_id = "ou-gmba-b7ljmf6d"  # Provide your existing organization ID
+  create_organization = var.create_organization  # Set this to false to bypass creating a new organization
+  org_id = var.org_id  # Provide your existing organization ID
 }
 
+# Module to create an account
 module "account" {
   source       = "./modules/account"
   parent_id    = module.organization.organizational_unit_id

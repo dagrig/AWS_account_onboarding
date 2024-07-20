@@ -1,3 +1,5 @@
+# Purpose: Define the output variables for the organization module.
+
 output "organization_id" {
   value = var.create_organization ? aws_organizations_organization.this[0].id : var.org_id
 }

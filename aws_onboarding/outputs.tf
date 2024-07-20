@@ -1,3 +1,4 @@
+# This outputs the organization ID, organizational unit ID, and new account ID.
 output "organization_id" {
   value = module.organization.organization_id
 }

@@ -9,6 +9,6 @@ variable "dns_records" {
     name  = string
     type  = string
     ttl   = number
-    records = list(string)
+    value = list(string)
   }))
 }

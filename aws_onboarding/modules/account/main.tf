@@ -1,6 +1,7 @@
+# This module creates a new AWS account in the organization and sets up the necessary resources for onboarding.
 resource "aws_organizations_account" "this" {
   name      = var.account_name
-  email     = "admin+${var.account_name}@example2.com"
+  email     = "admin+${var.account_name}@example2.com" # This email address must be unique
   parent_id = var.parent_id
   role_name = "OrganizationAccountAccessRole"
 }
@@ -17,7 +18,7 @@ provider "aws" {
   alias   = "new_account"
   region  = "us-east-1"
   assume_role {
-    role_arn = "arn:aws:iam::${aws_organizations_account.this.id}:role/OrganizationAccountAccessRole"
+    role_arn = "arn:aws:iam::${aws_organizations_account.this.id}:role/OrganizationAccountAccessRole" # Assume the role created in the new account
   }
 }
 
@@ -26,7 +27,7 @@ module "route53" {
   domain      = var.domain
   dns_records = var.dns_records
   providers = {
-    aws = aws.new_account
+    aws = aws.new_account # Use the new account provider 
   }
-  depends_on = [null_resource.wait_for_activation]
+  depends_on = [null_resource.wait_for_activation] # Wait for the account to activate before creating Route53 records
 }

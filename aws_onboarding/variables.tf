@@ -1,3 +1,9 @@
+variable "aws_region" {
+  description = "The AWS region to create resources in"
+  type        = string
+  default     = "us-east-1"
+}
+
 variable "account_name" {
   description = "The name of the new AWS account"
   type        = string
@@ -14,6 +20,23 @@ variable "dns_records" {
     name  = string
     type  = string
     ttl   = number
-    records = list(string)
+    value = list(string)
   }))
+}
+
+variable "parent_id" {
+  description = "Parent Organizational Unit ID for the new account"
+  type        = string
+}
+
+variable "create_organization" {
+  description = "Controls whether to create a new organization"
+  type        = bool
+  default     = false
+}
+
+variable "org_id" {
+  description = "Existing organization ID to use if create_organization is false"
+  type        = string
+  default     = ""
 }

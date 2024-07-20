@@ -1,3 +1,4 @@
+# Purpose: Create Route53 zone and records
 resource "aws_route53_zone" "this" {
   provider = aws
   name     = var.domain
@@ -11,5 +12,5 @@ resource "aws_route53_record" "dns_records" {
   name    = each.value.name
   type    = each.value.type
   ttl     = each.value.ttl
-  records = each.value.records
+  records = each.value.value
 }
