@@ -1,14 +1,11 @@
-# Output the Organization ID
 output "organization_id" {
+  value = module.organization.organization_id
+}
+
+output "organizational_unit_id" {
   value = module.organization.organizational_unit_id
 }
 
-# Output the Account ID
-output "account_id" {
-  value = module.account1.account_id
+output "new_account_id" {
+  value = module.account.account_id
 }
-
-
-# output "route53_zone_id" {
-#   value = module.account.route53_zone_id
-# }
