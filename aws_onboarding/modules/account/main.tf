@@ -14,6 +14,7 @@ resource "null_resource" "wait_for_activation" {
   depends_on = [aws_organizations_account.this]
 }
 
+# Create a new provider for the new account
 provider "aws" {
   alias   = "new_account"
   region  = var.aws_region
@@ -22,6 +23,7 @@ provider "aws" {
   }
 }
 
+# Create a Route53 zone and records in the new account
 module "route53" {
   source      = "../route53"
   domain      = var.domain

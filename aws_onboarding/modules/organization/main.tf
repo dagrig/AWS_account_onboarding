@@ -6,10 +6,12 @@ resource "aws_organizations_organization" "this" {
   # There is no name attribute for AWS Organizations, so we use the ID as the name
 }
 
+
 data "aws_organizations_organization" "existing" {
   count = var.create_organization ? 0 : 1 # If create_organization is true, then we don't need to fetch the existing organization
 }
 
+# Create an Organizational Unit in the new organization or existing organization
 resource "aws_organizations_organizational_unit" "this" {
   name      = "my-ou"
   parent_id = var.create_organization ? aws_organizations_organization.this[0].roots[0].id : var.org_id # If create_organization is true, then use the new organization ID, otherwise use the provided organization ID
